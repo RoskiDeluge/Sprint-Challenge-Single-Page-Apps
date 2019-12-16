@@ -1,13 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header(props) {
   return (
     <header className="ui centered">
       <h1 className="ui center">Rick &amp; Morty Fan Page</h1>
-      <Link to="/"><p>Home</p></Link>
-          {/* to= --> href */}
-      <Link to="/characters"><p>Characters</p></Link>
+      <h2 onClick={() => props.history.push("/")}>Home</h2>
+      <h2 onClick={() => props.history.push("/characters")}>Characters</h2>
     </header>
   );
 }

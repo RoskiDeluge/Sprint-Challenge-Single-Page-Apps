@@ -8,18 +8,21 @@ import CharacterList from './components/CharacterList';
 export default function App() {
   return (
     <main>
-      <Header />
+      <Route render={props => {
+        return <Header {...props} />
+      }}>
+      </Route>
       <Route
         exact
         path="/"
-        render={routeProps => {
+        render={() => {
           return <WelcomePage />;
         }}
       />
       <Route
         exact
         path="/characters"
-        render={routeProps => {
+        render={() => {
           return <CharacterList />;
         }}
       />
